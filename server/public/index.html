@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vídeo → Relatório</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="head">
+      <div class="mark">REC ●</div>
+      <h1>Vídeo <span class="arrow">→</span> Relatório</h1>
+      <p class="sub">Envie um vídeo (máx. 2GB). Transcrevemos e geramos resumo, pontos-chave e ações.</p>
+    </header>
+
+    <section class="deck" id="uploadDeck">
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept="video/*" hidden />
+        <div class="dz-inner">
+          <div class="dz-icon">▶</div>
+          <div class="dz-text">
+            <strong id="dzLabel">Toque para escolher um vídeo</strong>
+            <span>ou arraste o ficheiro aqui — limite 2GB</span>
+          </div>
+        </div>
+      </label>
+
+      <div class="filebar" id="filebar" hidden>
+        <span id="fileName">—</span>
+        <span id="fileSize">—</span>
+      </div>
+
+      <button id="sendBtn" class="btn" disabled>Gerar relatório</button>
+      <p class="err" id="errMsg" hidden></p>
+    </section>
+
+    <section class="deck" id="progressDeck" hidden>
+      <div class="log" id="logLine">a preparar…</div>
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+      <div class="pct" id="pct">0%</div>
+    </section>
+
+    <section class="deck report" id="reportDeck" hidden>
+      <h2>Resumo</h2>
+      <p id="resumo"></p>
+
+      <h2>Pontos-chave</h2>
+      <ul id="pontos"></ul>
+
+      <h2>Ações / Decisões</h2>
+      <ul id="acoes"></ul>
+
+      <button class="btn ghost" id="resetBtn">Processar outro vídeo</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
